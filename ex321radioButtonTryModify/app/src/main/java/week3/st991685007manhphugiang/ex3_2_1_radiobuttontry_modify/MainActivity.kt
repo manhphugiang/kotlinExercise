@@ -98,7 +98,8 @@ fun RadioButtonSample(modifier: Modifier = Modifier, colors: RadioButtonColors =
                         selected = (text == selectedOption),
                         onClick = {
                             onOptionSelected(text)
-                            Toast.makeText(context, text, Toast.LENGTH_SHORT).show()
+                        //remove the toast display
+                        //  Toast.makeText(context, text, Toast.LENGTH_SHORT).show()
                         }
                     )
                     .padding(horizontal = 16.dp),
