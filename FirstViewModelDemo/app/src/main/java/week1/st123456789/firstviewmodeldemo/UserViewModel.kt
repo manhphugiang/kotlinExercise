@@ -5,6 +5,7 @@ import androidx.compose.runtime.mutableStateListOf
 
 class UserViewModel : ViewModel() {
     private val _users = mutableStateListOf<User>()
+
     val users: List<User> get() = _users
 
     fun addUser(id: Int, name: String, email: String) {

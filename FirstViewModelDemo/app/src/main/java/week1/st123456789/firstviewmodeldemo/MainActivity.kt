@@ -56,7 +56,9 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun UserScreen(viewModel: UserViewModel, modifier: Modifier = Modifier) {
+
     val users = viewModel.users
+
     var name by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
 
@@ -81,9 +83,12 @@ fun UserScreen(viewModel: UserViewModel, modifier: Modifier = Modifier) {
         )
         Button(
             onClick = {
+
                 val id = users.size + 1
+
                 viewModel.addUser(id, name, email)
-                name = "" // Clear the input fields after adding
+
+                name = ""
                 email = ""
             },
         )
@@ -92,8 +97,10 @@ fun UserScreen(viewModel: UserViewModel, modifier: Modifier = Modifier) {
         }
 
         users.forEach { user ->
-            Text(text = "User : ${user.name} , ${user.email}")
-            Modifier.padding(top = 8.dp) // Add padding above each user
+            Text(text = "User : ${user.name}")
+            Modifier.padding(top = 5.dp)
+            Text(text = "User Email : ${user.email}")
+            Modifier.padding(top = 25.dp)
         }
     }
 }
